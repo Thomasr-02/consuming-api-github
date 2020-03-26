@@ -1,6 +1,6 @@
 import React from 'react';
 import Navbar from './components/Navbar'
-import Profile  from './components/profile';
+import Profile  from './components/profile/profile';
 //some classes extends React.Component
 
 class App extends React.Component {
