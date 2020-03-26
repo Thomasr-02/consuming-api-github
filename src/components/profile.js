@@ -1,30 +1,81 @@
-import React from 'react';
+import React, { Component } from 'react';
+import axios from 'axios';
 
-const profile = ({user})=>(
-    <div class="row">
-        <div class="col-md-4">
-            <div class="card" style={{width:"100rem"}}>
-                <img class="card-img-top" src={user.avatar_url}/>
-                <ul class="list-group list-group-flush">
-                    <li class="list-group-item">
-                        Repositorios:
-                        <span class="Badge badge-success">{user.public_repos}</span>
-                    </li>
-                    <li class="list-group-item">
-                        Seguidores:
-                        <span class="Badge badge-primary">{user.followers}</span>
-                    </li>
-                    <li class="list-group-item">
-                        Seguindo:
-                        <span class="Badge badge-info">{user.following}</span>
-                    </li>
-                </ul>
-                <div class="card-body">
-                    <a href="user.html_url" class="btn btn-success btn-block">Ver perfil</a>
+class profile extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            user: []
+        }
+    }
+    getUser = async (e) => {
+        const user = e.target.value;
+        console.log(user);
+        await axios.get(`https://api.github.com/users/${user}`)
+            .then(res => {
+                console.log(res.data)
+                const usuario = res.data;
+                this.setState({user:[ usuario ]});
+
+            }).catch((err) => {
+                console.log(err)
+            });
+    }
+
+    render() {
+        console.log(this.state);
+        return (
+            <>
+                <div className="container" id="app">
+                    <div className="card card-body">
+                        <h1>Pesquisar users do github</h1>
+                        <p className="lead">Digite o nome do user</p>
+                        <input onChange={this.getUser} id="search" type="text" className="form-control" required />
+                    </div>
+
+
                 </div>
-            </div>
-        </div>
-    </div>
-)
+                {
+                    
+                    this.state.user.map(user => (
+                        
+                        <div key={user.id} className="container border" id="ListUser">
 
+                            <div className="row">
+                                <div className="col-md-4">
+                                    <div className="card" style={{ width: "100rem" }}>
+                                        <img className="card-img-top" src={user.avatar_url} />
+                                        <ul className="list-group list-group-flush">
+                                            <li className="list-group-item">
+                                                Repositorios:
+                                                <span className="Badge badge-success">{user.public_repos}</span>
+                                            </li>
+                                            <li className="list-group-item">
+                                                Seguidores:
+                                                <span className="Badge badge-primary">{user.followers}</span>
+                                            </li>
+                                            <li className="list-group-item">
+                                                Seguindo:
+                                                <span className="Badge badge-info">{user.following}</span>
+                                            </li>
+                                        </ul>
+                                        <div className="card-body">
+                                            <a href="user.html_url" className="btn btn-success btn-block">Ver perfil</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+
+                        </div>
+                    ))
+                }
+
+            </>
+        )
+
+    }
+}
 export default profile;
