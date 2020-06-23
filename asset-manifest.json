@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/consuming-api-github/static/css/main.5ecd60fb.chunk.css",
+    "main.js": "/consuming-api-github/static/js/main.22b9fe34.chunk.js",
+    "main.js.map": "/consuming-api-github/static/js/main.22b9fe34.chunk.js.map",
+    "runtime-main.js": "/consuming-api-github/static/js/runtime-main.eb637b49.js",
+    "runtime-main.js.map": "/consuming-api-github/static/js/runtime-main.eb637b49.js.map",
+    "static/js/2.ce627b69.chunk.js": "/consuming-api-github/static/js/2.ce627b69.chunk.js",
+    "static/js/2.ce627b69.chunk.js.map": "/consuming-api-github/static/js/2.ce627b69.chunk.js.map",
+    "index.html": "/consuming-api-github/index.html",
+    "precache-manifest.75bb2e70217abf1b5f8d0eec8fea40d1.js": "/consuming-api-github/precache-manifest.75bb2e70217abf1b5f8d0eec8fea40d1.js",
+    "service-worker.js": "/consuming-api-github/service-worker.js",
+    "static/css/main.5ecd60fb.chunk.css.map": "/consuming-api-github/static/css/main.5ecd60fb.chunk.css.map",
+    "static/js/2.ce627b69.chunk.js.LICENSE.txt": "/consuming-api-github/static/js/2.ce627b69.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.eb637b49.js",
+    "static/js/2.ce627b69.chunk.js",
+    "static/css/main.5ecd60fb.chunk.css",
+    "static/js/main.22b9fe34.chunk.js"
+  ]
+}
